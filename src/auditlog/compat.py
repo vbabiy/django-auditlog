@@ -18,3 +18,9 @@ def is_authenticated(user):
         return user.is_authenticated()
     else:
         return user.is_authenticated
+
+
+try:
+    from django.contrib.postgres.fields import JSONField
+except ImportError:
+    from jsonfield.fields import JSONField
